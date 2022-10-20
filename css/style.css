@@ -1,6 +1,6 @@
 :root {
   --main-color: #204298;
-  --orange-color: #df9203;
+  --orange-color: #b7872c;
   --bg-color: #efefef;
   --light-color: #fff;
 }
@@ -9,6 +9,11 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+html {
+  /* behavior: 'smooth'; */
+  scroll-behavior: smooth;
 }
 
 body {
@@ -36,12 +41,11 @@ body {
   z-index: 999;
 }
 
-.header>i {
-  /* font-size: 30px;
-  padding: 3px 5px;
+#title_header {
   cursor: pointer;
-  border-radius: 3px;
-  border: 1px solid #fff; */
+}
+
+.header>i {
   display: none;
 }
 
@@ -132,7 +136,7 @@ body {
 }
 
 a.active {
-  opacity: .5;
+  opacity: .7;
   transition: .3s;
   background: var(--orange-color);
 }
@@ -221,6 +225,9 @@ a.active:hover {
 }
 
 /* ========================================================================================================================== */
+article {
+  padding: 20px;
+}
 
 .home {
   width: calc(100% - 50px);
@@ -312,9 +319,9 @@ a.active:hover {
 /* =========================== */
 
 .content-text {
-  width: calc(100% - 80px);
+  width: calc(100% - 50px);
   text-align: end;
-  margin: 15px 15px;
+  margin: 15px 0;
   color: var(--light-color);
   background: var(--orange-color);
 }
@@ -331,7 +338,7 @@ a.active:hover {
 
 @media (max-width: 560px) {
   .content-text {
-    width: calc(100% - 30px);
+    width: 100%;
   }
 
   .content-text p {
@@ -350,7 +357,6 @@ a.active:hover {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  padding: 0 15px;
   margin-bottom: 15px;
 }
 
@@ -432,8 +438,6 @@ a.active:hover {
 
 .content-banner {
   display: block;
-  width: calc(100% - 30px);
-  margin: auto;
 }
 
 .fbanner {
@@ -460,7 +464,15 @@ a.active:hover {
   width: calc((100% / 3) - 14px);
   padding: 20px 10px;
   text-align: center;
+  transition: .3s;
   background: var(--light-color);
+  transform: translateY(30px);
+  opacity: 0;
+}
+
+.lbanner .block.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @media (max-width: 992px) {
@@ -584,6 +596,29 @@ a.active:hover {
 .lblock img {
   width: 200px;
   height: 200px;
+  animation: animateImg 3s linear infinite;
+}
+
+@keyframes animateImg {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  20% {
+    transform: translate(-20px, -20px);
+  }
+
+  40% {
+    transform: translate(20px, 20px);
+  }
+
+  70% {
+    transform: translate(40px, -20px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
 }
 
 .lblock h2 {
@@ -640,32 +675,33 @@ a.active:hover {
 
 /* ================================================================================= */
 
-.form-banner {
-  width: calc(100% - 80px);
-  margin-left: 15px;
-  gap: 20px;
+.form_banner {
+  width: calc(100% - 50px);
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  gap: 15px;
 }
 
-.form {
+.form_banner .form {
+  width: calc(100% / 3);
   padding: 20px;
-  margin-bottom: 20px;
   background: var(--bg-color);
   border-top: 4px solid var(--main-color);
 }
 
-.form,
-.form-banner .group {
-  width: calc(100% / 3);
+@media (max-width: 992px) {
+  .form_banner {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
-.form h3 {
+.form_banner .form h3 {
   margin-block: 0 20px;
 }
 
-.form .group {
+/* ================ */
+
+.form_banner .form_group {
   width: 100%;
   height: 40px;
   color: #00000080;
@@ -675,125 +711,107 @@ a.active:hover {
   position: relative;
 }
 
+/* 
 @media (max-width: 768px) {
-  .form-banner {
+  .form_banner {
     display: block;
   }
 
-  .form,
-  .form-banner .group,
+  .form_banner .form,
+  .form_group,
   .well {
     width: 100%;
   }
 }
 
 @media (max-width: 560px) {
-  .form-banner {
+  .form_banner {
     width: calc(100% - 30px);
   }
 
-  .form {
+  .form_banner .form {
     margin-bottom: 20px;
   }
-}
+} */
 
-.form input:not([type="checkbox"]) {
+.form_banner .form_group input {
   width: 100%;
   height: 100%;
-  padding: 0 5px 0 30px;
-
+  padding-left: 30px;
+  padding-right: 5px;
   border: none;
   outline: none;
   transition: .3s;
 }
 
-.form .group span {
+.form_banner .form_group span {
   width: 30px;
   height: 100%;
+  line-height: 40px;
+  text-align: center;
   position: absolute;
   left: 0;
-  text-align: center;
-  line-height: 40px;
 }
 
-.form input:not([type="checkbox"]):focus {
+.form_banner .form_group input:focus {
   transform: scale(1.02);
+}
+
+.form_banner .form label {
+  margin-right: 5px;
+}
+
+.form_banner .form .btn {
+  width: 100%;
+  height: 40px;
+  opacity: .9;
+  border: none;
+  outline: none;
+  transition: .3s;
+  cursor: pointer;
+  margin-top: 20px;
+  color: var(--light-color);
+  background: var(--main-color);
+}
+
+.form_banner .form .btn:hover {
+  opacity: 1;
+}
+
+.form_banner .form .btn i {
+  margin-right: 5px;
 }
 
 ::placeholder {
   text-align: right;
 }
 
-.form label {
-  margin-right: 5px;
-}
-
-.form .btn {
-  width: 100%;
-  height: 40px;
-  opacity: .9;
-  border: none;
-  outline: none;
-  color: var(--light-color);
-  cursor: pointer;
-  margin-top: 20px;
-  background: var(--main-color);
-}
-
-.form .btn:hover {
-  opacity: 1;
-}
-
-.form .btn i {
-  margin-right: 5px;
-}
-
-@media (max-width: 992px) {
-  .form h3 {
-    font-size: 16px;
-  }
-
-  .form .group {
-    height: 35px;
-  }
-
-  .form .group input {
-    font-size: 14px;
-    padding-left: 30px;
-  }
-
-  ::placeholder {
-    font-size: 14px;
-  }
-}
-
 /* ========================= */
 
-.well {
+.form_banner .count_group {
+  width: calc(100% / 3);
+  height: 100%;
+}
+
+.form_banner .count_group .well {
+  height: calc(50% - 20px);
   padding: 25px 20px;
-  margin-bottom: 20px;
-  text-align: right;
   background: var(--bg-color);
   border-top: 4px solid var(--main-color);
 }
 
-.form-banner>.well {
-  height: 280px;
-  text-align: center;
-}
-
-.form-banner .well>p {
+.form_banner .count_group .well:first-child {
   margin-bottom: 20px;
 }
 
-.form-banner>.well i {
-  font-size: 35px;
+.form_banner .count_group .well>p {
+  text-align: right;
+  margin-bottom: 20px;
 }
 
-.well .btn {
+.form_banner .count_group .btn {
   width: 100%;
   height: 40px;
-  opacity: .8;
   border: none;
   outline: none;
   display: flex;
@@ -804,26 +822,93 @@ a.active:hover {
   background: var(--orange-color);
 }
 
-.well .btn:hover {
-  opacity: 1;
+.form_banner .count_group .btn i {
+  font-size: 15px;
+  padding-right: 10px;
 }
 
-.well .btn i {
-  margin-right: 5px;
-  cursor: pointer;
-}
-
-.well i {
-  cursor: pointer;
-}
-
-.group .well:nth-child(2) .btn {
+.form_banner .count_group .well:nth-child(2) .btn {
   background: #000;
+}
+
+/* ========================= */
+
+.form_banner .pay_group {
+  width: calc(100% / 3);
+  height: 280px;
+  padding: 25px;
+  background: var(--bg-color);
+  border-top: 4px solid var(--main-color);
+}
+
+.form_banner .pay_group .content_pay {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+.form_banner .pay_group p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.form_banner .pay_group i {
+  font-size: 36px;
+  margin: 0 10px 20px;
+  cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  .form_banner .pay_group .content_pay {
+    width: 100%;
+  }
+
+  .form_banner .pay_group i {
+    font-size: 24px;
+    margin: 0 5px 20px;
+  }
+}
+
+@media (max-width: 992px) {
+
+  .form_banner .form,
+  .form_banner .count_group,
+  .form_banner .pay_group {
+    width: calc(50% - 7.5px);
+  }
+
+  .form_banner .pay_group {
+    height: fit-content;
+    margin-bottom: 20px;
+  }
+
+  .form_banner .count_group .btn p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 560px) {
+  .form_banner {
+    width: 100%;
+    padding-bottom: 15px;
+  }
+
+  .form_banner .form,
+  .form_banner .count_group,
+  .form_banner .pay_group {
+    width: 100%;
+  }
+
+  .form_banner .count_group .btn p {
+    font-size: 16px;
+  }
 }
 
 /* ================================== */
 
 footer {
+  width: 100%;
   display: block;
   line-height: 50px;
   text-align: center;
@@ -843,12 +928,13 @@ footer p:first-of-type {
 footer p:last-of-type {
   font-size: 12px;
   text-transform: capitalize;
-  background: #00007a;
+  background: #000;
 }
 
 footer p:last-of-type span {
-  font-weight: bold;
   font-size: 14px;
+  margin-left: 7px;
+  font-weight: bold;
   letter-spacing: 1px;
 }
 

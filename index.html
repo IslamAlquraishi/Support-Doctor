@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>دكتور دعم</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="css/all.min.css">
   <!-- Normalize -->
@@ -21,34 +21,36 @@
 
   <!-- Header -->
   <div class="header">
-    <h2>دكتور دعم</h2>
+    <h2 id="title_header">دكتور دعم</h2>
     <i id="menu_bars" class="fa-solid fa-bars"></i>
+
+    <!-- List Links Navbar -->
     <nav id="list_link" class="list_link">
-      <a href="#" class="link active">
+      <a href="#form" class="link active">
         <i class="fa-solid fa-right-to-bracket"></i>
         <span>دخول الأعضاء</span>
       </a>
-      <a href="#" class="link">
+      <a href="#form" class="link">
         <i class="fa-solid fa-user-plus"></i>
         <span>تسجيل عضو جديد</span>
       </a>
-      <a href="#" class="link">
+      <a href="#media" class="link">
         <i class="fa-solid fa-star"></i>
         <span>قائمة الخدمات</span>
       </a>
-      <a href="#" class="link">
+      <a href="#media" class="link">
         <i class="fa-solid fa-gift"></i>
         <span>البطاقات والهدايا</span>
       </a>
-      <a href="#" class="link">
+      <a href="#we_us" class="link">
         <i class="fa-solid fa-circle-check"></i>
         <span>من نحن</span>
       </a>
-      <a href="#" class="link">
+      <a href="#media" class="link">
         <i class="fa-solid fa-bookmark"></i>
         <span>شروط الأستخدام</span>
       </a>
-      <a href="#" class="link">
+      <a href="#we_us" class="link">
         <i class="fa-solid fa-circle-question"></i>
         <span>الأسألة الشائعة</span>
       </a>
@@ -61,6 +63,7 @@
         <span>ENGLISH</span>
       </a>
 
+      <!-- Color Picker -->
       <div class="data_color">
         <ul class="list_color">
           <li class="active" data-color="#204298"></li>
@@ -71,8 +74,6 @@
         </ul>
       </div>
     </nav>
-
-
   </div>
 
   <!-- Start Sections -->
@@ -98,33 +99,33 @@
     </div>
 
     <!-- Feedbace -->
-    <section class="cards">
+    <section class="cards" id="cards">
       <div class="container">
         <div class="card">
           <i class="fa-solid fa-circle-question"></i>
           <div class="block">
-            <h3>29784</h3>
+            <h3 class="progress" data-progress="591">0</h3>
             <p>عميل تم تسليمه</p>
           </div>
         </div>
         <div class="card">
           <i class="fa-solid fa-star"></i>
           <div class="block">
-            <h3>29784</h3>
+            <h3 class="progress" data-progress="326">0</h3>
             <p>عميل يثقون بنا</p>
           </div>
         </div>
         <div class="card">
           <i class="fa-solid fa-users"></i>
           <div class="block">
-            <h3>29784</h3>
+            <h3 class="progress" data-progress="248">0</h3>
             <p> خدمة حصرية </p>
           </div>
         </div>
         <div class="card">
           <i class="fa-solid fa-cart-shopping"></i>
           <div class="block">
-            <h3>29784</h3>
+            <h3>8H/5D</h3>
             <p> دعم فني لمساعدتك </p>
           </div>
         </div>
@@ -132,7 +133,7 @@
     </section>
 
     <!-- Section Banner -->
-    <section class="banner">
+    <section class="banner" id="media">
       <div class="content-banner">
         <div class="fbanner">دكتور دعم، أفضل وأقوى متجر وأضمن تطبيق وبرنامج اعلانات وتسويق لحسابات مواقع التواصل
           الاجتماعي بأقل وأرخص
@@ -177,7 +178,7 @@
               تايدل, شازم, سبريكر, لايف مي, أنغامي, دييزر, بيريسكوب,ميكس كلاود, فليبجرام, كورا تيليجرام, زوار، والمزيد!
             </p>
           </div>
-          <div class="lblock">
+          <div class="lblock" id="we_us">
             <img src="Layer.png">
             <div class="div">
               <h2>-: لماذا دكتور دعم</h2>
@@ -195,17 +196,18 @@
       </div>
     </section>
 
-    <!-- Section Form -->
-    <section class="form-banner">
+    <!-- Section Form Banner -->
+    <section class="form_banner" id="form">
+      <!-- Form -->
       <form class="form" dir="rtl">
         <h3>تسجيل الدخول</h3>
-        <div class="group">
+        <div class="form_group">
           <input type="email" placeholder="أسم المستخدم">
           <span>
             <i class="fa-solid fa-user"></i>
           </span>
         </div>
-        <div class="group">
+        <div class="form_group">
           <input type="password" placeholder="كلمة المرور">
           <span>
             <i class="fa-solid fa-lock"></i>
@@ -217,7 +219,9 @@
           <i class="fa-solid fa-right-to-bracket"></i>
         </button>
       </form>
-      <div class="group">
+
+      <!-- Count Group -->
+      <div class="count_group">
         <div class="well">
           <p>نسيت كلمة المرور؟</p>
           <button type="submit" class="btn">
@@ -233,18 +237,20 @@
           </button>
         </div>
       </div>
-      <div class="well">
-        <p>طرق الدفع المعتمدة؟</p>
-        <i class="fa-solid fa-credit-card"></i>
-        <i class="fa-brands fa-cc-visa"></i>
-        <br><br>
-        <i class="fa-brands fa-cc-mastercard"></i>
-        <i class="fab fa-2x fa-cc-amex"></i>
-        <i class="fab fa-2x fa-cc-stripe"></i>
-        <i class="fab fa-2x fa-cc-apple-pay"></i>
-        <br><br>
-        <i class="fab fa-2x fa-google-pay"></i>
-        <i class="fab fa-2x fab fa-btc"></i>
+
+      <!-- Pay Group -->
+      <div class="pay_group">
+        <div class="content_pay">
+          <p>طرق الدفع المعتمدة؟</p>
+          <i class="fa-solid fa-credit-card"></i>
+          <i class="fa-brands fa-cc-visa"></i>
+          <i class="fa-brands fa-cc-mastercard"></i>
+          <i class="fab fa-2x fa-cc-amex"></i>
+          <i class="fab fa-2x fa-cc-stripe"></i>
+          <i class="fab fa-2x fa-cc-apple-pay"></i>
+          <i class="fab fa-2x fa-google-pay"></i>
+          <i class="fab fa-2x fab fa-btc"></i>
+        </div>
       </div>
     </section>
   </article>
@@ -255,6 +261,8 @@
       الإسترجاع</p>
     <p>created by <span>"islam al-quraishi"</span></p>
   </footer>
+
+  <!-- File JavaScript -->
   <script src="main.js"></script>
 </body>
 
