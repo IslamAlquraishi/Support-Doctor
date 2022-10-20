@@ -910,7 +910,7 @@ article {
 footer {
   width: 100%;
   display: block;
-  line-height: 50px;
+padding: 20px;
   text-align: center;
   color: var(--light-color);
   background: var(--main-color);
@@ -919,7 +919,7 @@ footer {
 }
 
 footer p:first-of-type {
-  height: 50px;
+
   display: block;
   font-size: 12px;
   line-height: 50px;
@@ -960,6 +960,6 @@ footer p:last-of-type span {
 
 @media (max-width: 560px) {
   footer p:first-of-type {
-    font-size: 5px;
+    font-size: 4px;
   }
 }
