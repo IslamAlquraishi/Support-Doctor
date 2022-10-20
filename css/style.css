@@ -910,7 +910,6 @@ article {
 footer {
   width: 100%;
   display: block;
-  line-height: 50px;
   text-align: center;
   color: var(--light-color);
   background: var(--main-color);
@@ -919,16 +918,19 @@ footer {
 }
 
 footer p:first-of-type {
-  height: 50px;
+  width: 80%;
+  margin: auto;
+  padding: 10px 0;
   display: block;
   font-size: 12px;
-  line-height: 50px;
+  line-height: 1.6;
 }
 
 footer p:last-of-type {
   font-size: 12px;
-  text-transform: capitalize;
+  padding: 10px 0;
   background: #000;
+  text-transform: capitalize;
 }
 
 footer p:last-of-type span {
