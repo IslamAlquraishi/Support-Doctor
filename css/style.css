@@ -960,6 +960,6 @@ footer p:last-of-type span {
 
 @media (max-width: 560px) {
   footer p:first-of-type {
-    font-size: 7px;
+    font-size: 5px;
   }
 }
