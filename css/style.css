@@ -965,4 +965,7 @@ footer p:last-of-type span {
   footer p:first-of-type {
     font-size: 7px;
   }
+footer p:last-of-type {
+    font-size: 8px;
+  }
 }
