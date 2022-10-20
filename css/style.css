@@ -910,6 +910,10 @@ article {
 footer {
   width: 100%;
   display: block;
+<<<<<<< HEAD
+=======
+padding: 20px;
+>>>>>>> 8311ef77129859b2c3c8625c5714be04613c312e
   text-align: center;
   color: var(--light-color);
   background: var(--main-color);
@@ -918,12 +922,19 @@ footer {
 }
 
 footer p:first-of-type {
+<<<<<<< HEAD
   width: 80%;
   margin: auto;
   padding: 10px 0;
   display: block;
   font-size: 12px;
   line-height: 1.6;
+=======
+
+  display: block;
+  font-size: 12px;
+
+>>>>>>> 8311ef77129859b2c3c8625c5714be04613c312e
 }
 
 footer p:last-of-type {
@@ -962,6 +973,6 @@ footer p:last-of-type span {
 
 @media (max-width: 560px) {
   footer p:first-of-type {
-    font-size: 7px;
+    font-size: 4px;
   }
 }
