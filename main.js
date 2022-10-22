@@ -43,24 +43,31 @@ List_Link.addEventListener("mouseleave", () => {
   List_Link.classList.remove("show");
 });
 
+// Change Main-Color For AllPage
+let ColorsLi = document.querySelectorAll(".data_color .list_color li");
+
 // Get Color In LocalStorage
 let NewColor = localStorage.getItem("Main_Color");
 
 // Check For Color In LocalStorage
 if (NewColor !== null) {
   document.documentElement.style.setProperty("--main-color", NewColor);
-}
 
-// Change Main-Color For AllPage
-let ColorsLi = document.querySelectorAll(".data_color .list_color li");
+  ColorsLi.forEach((li) => {
+    li.classList.remove("active");
+    if (li.dataset.color == NewColor) {
+      li.classList.add("active");
+    }
+  });
+}
 
 ColorsLi.forEach((li) => {
   li.addEventListener("click", (e) => {
     ColorsLi.forEach((li) => {
       li.classList.remove("active");
     });
-
     li.classList.add("active");
+
     console.log("Hello I'm Islam");
     Data_Color = e.target.dataset.color;
     document.documentElement.style.setProperty("--main-color", Data_Color);

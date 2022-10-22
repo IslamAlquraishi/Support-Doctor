@@ -12,7 +12,6 @@
 }
 
 html {
-  /* behavior: 'smooth'; */
   scroll-behavior: smooth;
 }
 
@@ -170,7 +169,7 @@ a.active:hover {
   justify-content: space-between;
 
   padding: 10px 15px;
-  background: #fff;
+  background: #373737;
 }
 
 @media (max-width: 560px) {
@@ -190,7 +189,7 @@ a.active:hover {
   transition: .3s;
   border-radius: 50%;
   cursor: pointer;
-  opacity: .5;
+  opacity: .2;
 }
 
 .header .data_color li:hover {
@@ -201,7 +200,7 @@ a.active:hover {
 .data_color .list_color li.active {
   opacity: 1;
   transform: scale(1.2);
-  border: 3px solid #00000080;
+  border: 3px solid #ffffff90;
 }
 
 .header .data_color li:nth-child(1) {
@@ -245,7 +244,7 @@ article {
   height: 100%;
   background-size: cover;
   background-position: center;
-  background-image: url('../home.jpeg');
+  background-image: url('../Images/home.jpeg');
   position: absolute;
 }
 
@@ -965,7 +964,8 @@ footer p:last-of-type span {
   footer p:first-of-type {
     font-size: 7px;
   }
-footer p:last-of-type {
+
+  footer p:last-of-type {
     font-size: 8px;
   }
 }
