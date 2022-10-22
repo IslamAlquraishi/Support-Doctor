@@ -975,7 +975,6 @@ article {
   right: 70px;
   bottom: 20px;
   z-index: 889;
-  display: none;
   transform: scale(0) translateX(5px);
 }
 .ScrollToTop.active {
