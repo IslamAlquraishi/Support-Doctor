@@ -975,10 +975,10 @@ article {
   right: 70px;
   bottom: 20px;
   z-index: 889;
-  transform: scale(0) translateX(5px);
+  transform: scale(0) translateX(35px);
 }
 .ScrollToTop.active {
-  transform: scale(1)translateX(0);
+  transform: scale(1) translateX(0);
 }
 
 .ScrollToTop .inner {
