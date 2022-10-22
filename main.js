@@ -1,3 +1,15 @@
+// Functions Will Word After Onload Window
+window.onscroll = () => {
+  scroll();
+};
+
+// Functions Will Word With Scroll Window
+window.onscroll = () => {
+  ShowCards();
+  CardFolio();
+  scroll();
+};
+
 // Add Class For Links List
 let linksA = document.querySelectorAll(".list_link a");
 
@@ -77,17 +89,23 @@ ColorsLi.forEach((li) => {
   });
 });
 
+// Remove Main Color From LocalStorage
+let Reset = document.getElementById("reset");
+
+Reset.addEventListener("click", () => {
+  localStorage.removeItem("Main_Color");
+  window.location.reload();
+});
+
+// Go to Up By Click On Title
 let TitleHeader = document.getElementById("title_header");
 
 TitleHeader.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
+  document.documentElement.scrollTop = "0";
 });
 
 // Make Show Card Banner By Scroll Window
-onscroll = () => {
+function ShowCards() {
   if (window.scrollY + 500 >= CradsSection.offsetTop) {
     if (started == false) {
       Progresss.forEach((prog) => {
@@ -96,8 +114,7 @@ onscroll = () => {
     }
     started = true;
   }
-  CardFolio();
-};
+}
 
 // Counter For Progress
 let CradsSection = document.getElementById("cards");
@@ -119,9 +136,29 @@ let Card_Block = document.querySelectorAll(".lbanner .block");
 
 function CardFolio() {
   Card_Block.forEach((c) => {
-    if (window.scrollY + 500 >= c.offsetTop) {
+    if (window.scrollY + 550 >= c.offsetTop) {
       c.classList.add("show");
+    } else {
+      c.classList.remove("show");
     }
-    false;
   });
 }
+
+let UP = document.getElementById("up");
+let scroll = () => {
+  let pos = document.documentElement.scrollTop;
+  let CalcHeigth =
+    document.body.clientHeight - document.documentElement.clientHeight;
+  let scrollProgress = Math.round((Math.floor(pos) * 100) / CalcHeigth);
+
+  if (pos > 450) {
+    UP.classList.add("active");
+  } else {
+    UP.classList.remove("active");
+  }
+
+  UP.style.background = ` conic-gradient(#0f0 ${scrollProgress}% , #00000030 ${scrollProgress}%) `;
+  UP.addEventListener("click", () => {
+    document.documentElement.scrollTop = "0";
+  });
+};

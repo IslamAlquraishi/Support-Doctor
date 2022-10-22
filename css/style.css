@@ -82,7 +82,7 @@ body {
   }
 
   .header .list_link.m-show {
-    height: 505px;
+    height: 420px;
   }
 }
 
@@ -102,6 +102,12 @@ body {
   position: relative;
   overflow: hidden;
   z-index: 1;
+}
+
+@media (max-width: 560px) {
+  .list_link a {
+    line-height: 25px;
+  }
 }
 
 .list_link a:not(:last-child) {
@@ -224,9 +230,61 @@ a.active:hover {
   background: #993723;
 }
 
-/* ========================================================================================================================== */
+.header .data_color span {
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  color: var(--main-color);
+  font-weight: bold;
+  cursor: pointer;
+  transition: .3s;
+  margin-top: 10px;
+  background: #fff000;
+}
+
+.header .data_color span:hover {
+  color: #fff;
+  background: #f00;
+}
+
+.header .data_color span i {
+  width: calc(35% - 10px);
+  margin-left: 12px;
+  text-align: left;
+  font-size: 24px;
+  transition: .3s;
+}
+
+.header .list_link:hover .data_color span i {
+  display: none;
+}
+
+.header .list_link:hover .data_color span {
+  display: block;
+  text-align: center;
+}
+
+@media (max-width: 560px) {
+  .header .data_color span {
+    display: block;
+    text-align: center;
+  }
+
+  .data_color span i {
+    display: none;
+  }
+}
+
+/* ================================================= */
 article {
   padding: 10px;
+}
+
+@media (max-width: 560px) {
+  article {
+    padding: 5px;
+  }
 }
 
 .home {
@@ -905,6 +963,43 @@ article {
   }
 }
 
+.ScrollToTop {
+  width: 35px;
+  height: 35px;
+  transition: .3s;
+  padding-left: 2.5px;
+  padding-top: 2.5px;
+  border-radius: 50%;
+
+  position: fixed;
+  right: 70px;
+  bottom: 20px;
+  z-index: 889;
+  display: none;
+  transform: scale(0) translateX(5px);
+}
+.ScrollToTop.active {
+  transform: scale(1)translateX(0);
+}
+
+.ScrollToTop .inner {
+  width: 30px;
+  height: 30px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 50%;
+  line-height: 32.5px;
+  background: var(--main-color);
+}
+
+@media (max-width: 560px) {
+  .ScrollToTop {
+    right: 20px;
+  }
+}
+
 /* ================================== */
 
 footer {
@@ -914,7 +1009,7 @@ footer {
   color: var(--light-color);
   background: var(--main-color);
   position: relative;
-  z-index: 999;
+  z-index: 888;
 }
 
 footer p:first-of-type {
