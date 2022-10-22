@@ -199,6 +199,7 @@ a.active:hover {
 
 .data_color .list_color li.active {
   opacity: 1;
+  order: -1;
   transform: scale(1.2);
   border: 3px solid #ffffff90;
 }
